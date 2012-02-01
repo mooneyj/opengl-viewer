@@ -7,6 +7,7 @@
 #include <Face1n.h>
 #include <ListFace1n.h>
 #include <STLObject.h>
+#include <FileReader.h>
 #include <glut.h>
 void drawAxes();
 Vector3	eye(0., 0., 10.);
@@ -42,6 +43,7 @@ void changeSize(int w, int h)
 
 float angle = 0.0f;
 
+FileReader file1("D:\\Programs\\OpenGL\\google_repo\\data\\Part1.stl");
 void renderScene(void) 
 {
 	// Clear Color and Depth Buffers
@@ -100,6 +102,7 @@ void renderScene(void)
 	stlObj.AddFace(&f4);
 	
 	stlObj.Draw();
+
 
 	double dColVal = 0.5;
 	m1.SetAt(0, & dColVal);
