@@ -7,8 +7,8 @@ Mat2x1()
 Point2D::Point2D(double iX, double iY):
 Mat2x1()
 {
-	SetAt(1, iX);
-	SetAt(2, iY);
+	SetAt(0, &iX);
+	SetAt(1, &iY);
 }
 Point2D::Point2D(double *arr):
 Mat2x1(arr)
@@ -17,17 +17,19 @@ Mat2x1(arr)
 
 double Point2D::GetX() const
 {
-	return GetAt(1);
+	return GetAt(0);
 }
 double Point2D::GetY() const
 {
-	return GetAt(2);
+	return GetAt(1);
 }
 
 Point2D::Point2D(const Point2D& iPt)
 {
-	SetAt(1, iPt.GetX());
-	SetAt(2, iPt.GetY());
+	double d1 = iPt.GetX();
+	double d2 = iPt.GetY(); 
+	SetAt(0, &d1);
+	SetAt(1, &d2);
 }
 //Point2D& Point2D::operator=(Point2D&iPt)
 //{
