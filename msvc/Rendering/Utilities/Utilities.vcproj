@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="Rendering"
-	ProjectGUID="{E84649DD-0F34-4AB4-922E-2A902ACF3F2C}"
-	RootNamespace="Rendering"
+	Name="Utilities"
+	ProjectGUID="{538731DF-8B96-4A1E-A222-14A8B3AA55DF}"
+	RootNamespace="Utilities"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -18,9 +18,9 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="..\..\..\bin"
+			OutputDirectory="..\..\..\bin\lib"
 			IntermediateDirectory="..\..\..\bin\obj"
-			ConfigurationType="1"
+			ConfigurationType="4"
 			CharacterSet="1"
 			>
 			<Tool
@@ -41,8 +41,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\..\..\Code\BasicServices\include;..\..\..\Code\GeomObject\include;..\..\..\Code\MathServices\include;..\..\..\Code\Rendering\include;..\..\..\Code\glut;..\..\..\Code\Utilities\include;"
-				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
+				AdditionalIncludeDirectories="..\..\..\Code\Utilities\include;..\..\..\Code\GeomObject\include;;..\..\..\Code\MathServices\include;..\..\..\Code\BasicServices\include"
+				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -60,19 +60,10 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				AdditionalDependencies="glut32.lib"
-				LinkIncremental="2"
-				AdditionalLibraryDirectories="..\..\..\Code\glut;..\..\..\bin\lib"
-				GenerateDebugInformation="true"
-				SubSystem="1"
-				TargetMachine="1"
+				Name="VCLibrarianTool"
 			/>
 			<Tool
 				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -84,9 +75,6 @@
 				Name="VCFxCopTool"
 			/>
 			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -94,7 +82,7 @@
 			Name="Release|Win32"
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
-			ConfigurationType="1"
+			ConfigurationType="4"
 			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>
@@ -117,7 +105,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
+				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
@@ -134,19 +122,10 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				LinkIncremental="1"
-				GenerateDebugInformation="true"
-				SubSystem="1"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				TargetMachine="1"
+				Name="VCLibrarianTool"
 			/>
 			<Tool
 				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -158,9 +137,6 @@
 				Name="VCFxCopTool"
 			/>
 			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -169,10 +145,18 @@
 	</References>
 	<Files>
 		<Filter
+			Name="include"
+			>
+			<File
+				RelativePath="..\..\..\Code\Utilities\include\FileReader.h"
+				>
+			</File>
+		</Filter>
+		<Filter
 			Name="src"
 			>
 			<File
-				RelativePath="..\..\..\Code\Rendering\src\main.cpp"
+				RelativePath="..\..\..\Code\Utilities\src\FilerReader.cpp"
 				>
 			</File>
 		</Filter>

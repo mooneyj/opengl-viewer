@@ -156,20 +156,12 @@
 				RelativePath="..\..\..\Code\BasicServices\include\ListDefinition.h"
 				>
 			</File>
-			<File
-				RelativePath="..\..\..\Code\BasicServices\include\ListIterator.h"
-				>
-			</File>
 		</Filter>
 		<Filter
 			Name="src"
 			>
 			<File
 				RelativePath="..\..\..\Code\BasicServices\src\ListDefinition.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\..\Code\BasicServices\src\ListIterator.cpp"
 				>
 			</File>
 		</Filter>

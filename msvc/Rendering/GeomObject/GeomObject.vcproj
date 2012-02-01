@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\..\..\Code\BasicServices\include;..\..\..\Code\MathServices\include;..\..\..\Code\GeomObject\include;..\..\..\Code\glut"
+				AdditionalIncludeDirectories="..\..\..\Code\BasicServices\include;..\..\..\Code\MathServices\include;..\..\..\Code\GeomObject\include;..\..\..\Code\glut;..\..\..\Code\MathServices\include;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
