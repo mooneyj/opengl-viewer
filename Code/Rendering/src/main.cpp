@@ -5,6 +5,8 @@
 #include <vector>
 #include <Line.h>
 #include <Face1n.h>
+#include <ListFace1n.h>
+#include <STLObject.h>
 #include <glut.h>
 void drawAxes();
 Vector3	eye(0., 0., 10.);
@@ -91,10 +93,18 @@ void renderScene(void)
 	f2.Draw();
 	f3.Draw();
 	f4.Draw();
+	STLObject stlObj(ma1);
+	stlObj.AddFace(&f1);
+	stlObj.AddFace(&f2);
+	stlObj.AddFace(&f3);
+	stlObj.AddFace(&f4);
+	
+	stlObj.Draw();
 
-	m1.SetAt(1, 0.5);
-	m1.SetAt(2, 0.5);
-	m1.SetAt(3, 0.5);
+	double dColVal = 0.5;
+	m1.SetAt(0, & dColVal);
+	m1.SetAt(1, & dColVal);
+	m1.SetAt(2, & dColVal);
 	LineR l1(&p11,&p12,m1);
 	LineR l2(&p11,&p13,m1);
 	LineR l3(&p13,&p12,m1);
