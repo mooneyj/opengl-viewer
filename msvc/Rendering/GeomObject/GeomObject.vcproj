@@ -161,6 +161,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\Code\GeomObject\src\ListFace1n.cpp"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\Code\GeomObject\src\Object.cpp"
 				>
 			</File>
@@ -170,6 +174,10 @@
 			</File>
 			<File
 				RelativePath="..\..\..\Code\GeomObject\src\Point3D.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Code\GeomObject\src\STLObject.cpp"
 				>
 			</File>
 			<File
@@ -193,6 +201,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\Code\GeomObject\include\ListFace1n.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\..\Code\GeomObject\include\Object.h"
 				>
 			</File>
@@ -202,6 +214,10 @@
 			</File>
 			<File
 				RelativePath="..\..\..\Code\GeomObject\include\Point3D.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Code\GeomObject\include\STLObject.h"
 				>
 			</File>
 			<File
