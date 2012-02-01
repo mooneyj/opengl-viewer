@@ -10,17 +10,18 @@
 class Face1n : public Object
 {
 public:
+	virtual ~Face1n();
 	Face1n(TriangleR iTr, Vector3 iNorm, Mat3x1 &iColorMatrix);
 	virtual void Draw();
 	Face1n(const Face1n& iFace);
 	TriangleR GetTriangleR() const;
-	void SetTriangleR(TriangleR iTr);
+	void SetTriangleR(TriangleR &iTr);
 	Vector3 GetNorm() const;
-	void SetNorm(Vector3 iNorm);
-	void SetColor(Mat3x1 iM);
+	void SetNorm(Vector3 &iNorm);
+	void SetColor(Mat3x1 &iM);
 private:
-	TriangleR		_tr;
-	Vector3			_norm;
+	TriangleR					*_tr;
+	Vector3						*_norm;
 };
 
 

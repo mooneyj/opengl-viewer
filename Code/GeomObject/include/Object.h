@@ -10,9 +10,9 @@ public:
 	virtual void Draw() = 0;
 	Mat3x1 GetColor() const;
 	Object(const Object& iObj);
-	void SetColor(Mat3x1 iM);
+	void SetColor(Mat3x1 &iM);
 private:
-	Mat3x1 _mColor;
+	Mat3x1					*_mColor;
 };
 
 #endif
