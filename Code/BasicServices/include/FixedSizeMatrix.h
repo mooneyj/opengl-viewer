@@ -2,43 +2,53 @@
 #ifndef _ConstSizeVector_h
 #define _ConstSizeVector_h
 
-template <typename T, size_t nMaxSize>
+template <class T, size_t MAX_SIZE>
 class FixedSizeMatrix
 {
 private:
-	T arr[nMaxSize];
+	T *_arr[MAX_SIZE];
 public:
 	FixedSizeMatrix(T *iArr)
 	{
-		for(int i = 0; i < nMaxSize; i++)
-			arr[i] = iArr[i];
+		for(int i = 0; i < MAX_SIZE; i++)
+			_arr[i] = new T(iArr[i]);
 	};
 	FixedSizeMatrix()
 	{
+		for(int i = 0; i < MAX_SIZE; i++)
+			_arr[i] = new T;
 	};
 	virtual ~FixedSizeMatrix()
 	{
+		for(int i = 0; i < MAX_SIZE; i++)
+			delete _arr[i];
 	};
 	T GetAt(int iLocation) const
 	{
-		if((iLocation-1) > nMaxSize)
+		if((iLocation) > MAX_SIZE)
 			throw 1;
-		return arr[iLocation-1];
+		return *(_arr[iLocation]);
 	}
-	void SetAt(int iLocation, T val)
+	void SetAt(int iLocation, T *val)
 	{
-		if((iLocation-1) > nMaxSize)
+		if((iLocation) > MAX_SIZE)
 			throw 1;
-		arr[iLocation-1] = val;
+		*(_arr[iLocation]) = *val;
 	}	 
-	T& operator[](int nIndex)
+	T& operator[](int nIndex)const
 	{
-		return arr[nIndex-1];
+		return *_arr[nIndex];
 	}
-	T& operator=(T &iT)
+	FixedSizeMatrix(const FixedSizeMatrix &iMatrix)
 	{
-		for(int i = 0; i < nMaxSize; i++)
-			arr[i] = iT[i+1];
+		for(int i = 0; i < MAX_SIZE; i++)
+			_arr[i] = new T(iMatrix[i]);
+	}
+	FixedSizeMatrix& operator=(const FixedSizeMatrix &iT)
+	{
+		for(int i = 0; i < MAX_SIZE; i++)
+			*_arr[i] = iT.GetAt(i);
+		return *this;
 	}
 };
 
