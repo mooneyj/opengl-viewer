@@ -11,6 +11,12 @@ public:
 		_type			= 0;
 		_pNext		= 0;
 	}
+	~ListIterator()
+	{
+		delete _type;
+		_type = 0;
+		//_pNext		= 0;
+	}
 	ListIterator<Type> * Next()
 	{
 		return _pNext;
@@ -44,6 +50,10 @@ public:
 		_head = 0;
 		_tail = 0;
 	}
+	~ListDefnition()
+	{
+		Destroy();
+	}
 	void Add(Type *pNewType)
 	{
 		ListIterator<Type>*ptr = new ListIterator<Type>;
@@ -72,10 +82,21 @@ public:
 			delete ptrCurr;
 			ptrCurr = ptrNext;
 		}
+		_head = 0;
+		_tail = 0;
 	}
-	ListIterator<Type>* Head()
+	void Empty()
+	{
+		_head = 0;
+		_tail = 0;
+	}
+	ListIterator<Type>* Head() const
 	{
 		return _head;
+	}
+	ListIterator<Type>* Tail() const
+	{
+		return _tail;
 	}
 private:
 	ListIterator<Type>*					_head;

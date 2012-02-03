@@ -15,6 +15,16 @@ Point3D::Point3D(double *arr):
 Mat3x1(arr)
 {
 }
+Point3D::~Point3D()
+{
+}
+
+void Point3D::Set(double *arr)
+{
+	SetAt(0, &arr[0]);
+	SetAt(1, &arr[1]);
+	SetAt(2, &arr[2]);
+}
 
 double Point3D::GetX() const
 {

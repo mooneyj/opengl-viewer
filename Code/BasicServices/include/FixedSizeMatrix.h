@@ -23,7 +23,7 @@ public:
 		for(int i = 0; i < MAX_SIZE; i++)
 			delete _arr[i];
 	};
-	T GetAt(int iLocation) const
+	T& GetAt(int iLocation) const
 	{
 		if((iLocation) > MAX_SIZE)
 			throw 1;

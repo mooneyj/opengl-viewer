@@ -9,12 +9,13 @@ public:
 	Point3D(double iX, double iY, double iZ);
 	Point3D();
 	Point3D(double *arr);
-	~Point3D(){};
+	void Set(double *arr);
 	double GetX() const;
 	double GetY() const;
 	double GetZ() const;
 
 	Point3D(const Point3D& iPt);
+	~Point3D();
 };
 
 #endif
