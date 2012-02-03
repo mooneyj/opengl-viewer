@@ -17,7 +17,7 @@ int nMainWnd = -1;
 
 double col[3] = {.1,0.5,0.};
 Mat3x1 m1(col);
-FileReader file1("E:\\vinayak\\coding\\opengl_viewer\\data\\aa.stl");
+FileReader file1("D:\\Programs\\OpenGL\\google_repo\\data\\aa.stl");
 STLObject stlObj1(m1);
 //file1.GetSTLObject(stlObj1);
 
