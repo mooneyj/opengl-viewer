@@ -11,9 +11,9 @@
 using namespace std;
 
 char TAB = 9;
-string GetNextWord(string s, size_t &curIndex);
-size_t GetSizeOfNextWord(string s, size_t &curIndex);
-double StrToDouble(string str);
+inline string GetNextWord(string s, size_t &curIndex);
+inline size_t GetSizeOfNextWord(string s, size_t &curIndex);
+inline double StrToDouble(string str);
 Point3D p1(0,0,0);
 Point3D p2(0,0,0);
 Point3D p3(0,0,0);
@@ -152,7 +152,7 @@ void FileReader::PopulateSTLObject()
 }
 
 
-size_t GetSizeOfNextWord(string s, size_t &curIndex)
+inline size_t GetSizeOfNextWord(string s, size_t &curIndex)
 {
 	size_t size = 0;
 	size_t strSize = s.size();
@@ -181,7 +181,7 @@ size_t GetSizeOfNextWord(string s, size_t &curIndex)
 	}
 	return size;
 }
-string GetNextWord(string s, size_t &curIndex)
+inline string GetNextWord(string s, size_t &curIndex)
 {
 	size_t nextWordSize = GetSizeOfNextWord(s,curIndex);
 	string sRet;
@@ -200,7 +200,7 @@ string GetNextWord(string s, size_t &curIndex)
 	return sRet;
 }
 
-double StrToDouble(string str)
+inline double StrToDouble(string str)
 {
 	const char* ch = str.c_str();
 	double nVal = atof(ch);
