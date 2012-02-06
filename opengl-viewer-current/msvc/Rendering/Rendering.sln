@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Rendering", "Rendering\Rendering.vcproj", "{E84649DD-0F34-4AB4-922E-2A902ACF3F2C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3FC39024-4DF7-43E1-8584-2915D8311B49} = {3FC39024-4DF7-43E1-8584-2915D8311B49}
+		{92DEE861-76A2-4EE5-97E7-503EE3086E9E} = {92DEE861-76A2-4EE5-97E7-503EE3086E9E}
+		{42F86EC9-6B63-4288-A3D0-6138B6DD2E6F} = {42F86EC9-6B63-4288-A3D0-6138B6DD2E6F}
+		{538731DF-8B96-4A1E-A222-14A8B3AA55DF} = {538731DF-8B96-4A1E-A222-14A8B3AA55DF}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BasicServices", "BasicServices\BasicServices.vcproj", "{92DEE861-76A2-4EE5-97E7-503EE3086E9E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GeomObject", "GeomObject\GeomObject.vcproj", "{3FC39024-4DF7-43E1-8584-2915D8311B49}"
+	ProjectSection(ProjectDependencies) = postProject
+		{92DEE861-76A2-4EE5-97E7-503EE3086E9E} = {92DEE861-76A2-4EE5-97E7-503EE3086E9E}
+		{42F86EC9-6B63-4288-A3D0-6138B6DD2E6F} = {42F86EC9-6B63-4288-A3D0-6138B6DD2E6F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MathServices", "MathServices\MathServices.vcproj", "{42F86EC9-6B63-4288-A3D0-6138B6DD2E6F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{92DEE861-76A2-4EE5-97E7-503EE3086E9E} = {92DEE861-76A2-4EE5-97E7-503EE3086E9E}
+		{538731DF-8B96-4A1E-A222-14A8B3AA55DF} = {538731DF-8B96-4A1E-A222-14A8B3AA55DF}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utilities", "Utilities\Utilities.vcproj", "{538731DF-8B96-4A1E-A222-14A8B3AA55DF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{92DEE861-76A2-4EE5-97E7-503EE3086E9E} = {92DEE861-76A2-4EE5-97E7-503EE3086E9E}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E84649DD-0F34-4AB4-922E-2A902ACF3F2C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E84649DD-0F34-4AB4-922E-2A902ACF3F2C}.Debug|Win32.Build.0 = Debug|Win32
+		{E84649DD-0F34-4AB4-922E-2A902ACF3F2C}.Release|Win32.ActiveCfg = Release|Win32
+		{E84649DD-0F34-4AB4-922E-2A902ACF3F2C}.Release|Win32.Build.0 = Release|Win32
+		{92DEE861-76A2-4EE5-97E7-503EE3086E9E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{92DEE861-76A2-4EE5-97E7-503EE3086E9E}.Debug|Win32.Build.0 = Debug|Win32
+		{92DEE861-76A2-4EE5-97E7-503EE3086E9E}.Release|Win32.ActiveCfg = Release|Win32
+		{92DEE861-76A2-4EE5-97E7-503EE3086E9E}.Release|Win32.Build.0 = Release|Win32
+		{3FC39024-4DF7-43E1-8584-2915D8311B49}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3FC39024-4DF7-43E1-8584-2915D8311B49}.Debug|Win32.Build.0 = Debug|Win32
+		{3FC39024-4DF7-43E1-8584-2915D8311B49}.Release|Win32.ActiveCfg = Release|Win32
+		{3FC39024-4DF7-43E1-8584-2915D8311B49}.Release|Win32.Build.0 = Release|Win32
+		{42F86EC9-6B63-4288-A3D0-6138B6DD2E6F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{42F86EC9-6B63-4288-A3D0-6138B6DD2E6F}.Debug|Win32.Build.0 = Debug|Win32
+		{42F86EC9-6B63-4288-A3D0-6138B6DD2E6F}.Release|Win32.ActiveCfg = Release|Win32
+		{42F86EC9-6B63-4288-A3D0-6138B6DD2E6F}.Release|Win32.Build.0 = Release|Win32
+		{538731DF-8B96-4A1E-A222-14A8B3AA55DF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{538731DF-8B96-4A1E-A222-14A8B3AA55DF}.Debug|Win32.Build.0 = Debug|Win32
+		{538731DF-8B96-4A1E-A222-14A8B3AA55DF}.Release|Win32.ActiveCfg = Release|Win32
+		{538731DF-8B96-4A1E-A222-14A8B3AA55DF}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
