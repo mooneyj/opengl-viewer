@@ -149,11 +149,15 @@
 			Name="include"
 			>
 			<File
-				RelativePath="..\..\..\Code\BasicServices\include\FixedSizeMatrix.h"
+				RelativePath="..\..\..\Code\BasicServices\include\FixedSizeArray.h"
 				>
 			</File>
 			<File
 				RelativePath="..\..\..\Code\BasicServices\include\ListDefinition.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Code\BasicServices\include\MatrixDefinition.h"
 				>
 			</File>
 		</Filter>
@@ -161,7 +165,7 @@
 			Name="src"
 			>
 			<File
-				RelativePath="..\..\..\Code\BasicServices\src\ListDefinition.cpp"
+				RelativePath="..\..\..\Code\BasicServices\src\MatrixDefinition.cpp"
 				>
 			</File>
 		</Filter>
