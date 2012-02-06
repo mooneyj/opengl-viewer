@@ -1,12 +1,12 @@
 #include <Face1n.h>
 
 Face1n::Face1n(TriangleR iTr, Vector3 iNorm, Mat3x1 &iColorMatrix):
-Object(iColorMatrix),
+Object(&iColorMatrix),
 _tr(new TriangleR(iTr)),
 _norm(new Vector3(iNorm))
 {
 	if(_tr)
-		_tr->SetColor(iColorMatrix);
+		_tr->SetColor(&iColorMatrix);
 }
 Face1n::~Face1n()
 {
@@ -28,7 +28,7 @@ _norm(new Vector3(iFace.GetNorm()))
 }
 void Face1n::SetColor(Mat3x1 &iM)
 {
-	_tr->SetColor(iM);
+	_tr->SetColor(&iM);
 }
 
 TriangleR Face1n::GetTriangleR() const
@@ -48,4 +48,6 @@ void Face1n::SetNorm(Vector3 &iNorm)
 {
 	*_norm = iNorm;
 }
-
+void Face1n::Translate(Vector3 &iDir, double idist)
+{
+}

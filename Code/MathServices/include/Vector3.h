@@ -14,6 +14,7 @@ public:
 	double GetX();
 	double GetY();
 	double GetZ();
+	
 };
 
 #endif

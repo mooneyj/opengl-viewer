@@ -8,18 +8,22 @@
 #include <ListFace1n.h>
 #include <STLObject.h>
 #include <FileReader.h>
+#include <Mat4x4.h>
 #include <glut.h>
 void drawAxes();
-Vector3	eye(0., 0., 300.);
-Vector3	object(0., 0., 0.);
-Vector3	upDir(0., 1., 0.);
+Point3D	eye(0., 0., 300.);
+Point3D object(0., 0., 0.);
+Point3D	upDir(0., 1., 0.);
 int nMainWnd = -1;
 
 double col[3] = {.1,0.5,0.};
 Mat3x1 m1(col);
 FileReader file1("D:\\Programs\\OpenGL\\google_repo\\data\\aa.stl");
 STLObject stlObj1(m1);
-//file1.GetSTLObject(stlObj1);
+void LoadSTL(STLObject &iObj)
+{
+	file1.GetSTLObject(iObj);
+}
 
 void changeSize(int w, int h) 
 {
@@ -47,7 +51,8 @@ void changeSize(int w, int h)
 }
 
 float angle = 0.0f;
-
+float dist = 10.;
+Vector3 viewTranslate(1.,0,1);
 void renderScene(void) 
 {
 	// Clear Color and Depth Buffers
@@ -60,14 +65,17 @@ void renderScene(void)
 			object.GetX(), object.GetY(),object.GetZ(),
 			upDir.GetX(), upDir.GetY(),  upDir.GetZ());
 
-	glRotatef(angle, 1.0f, 4.0f, 1.0f);
+	eye.Translate(viewTranslate,dist);
+	
+	//glRotatef(angle, 1.0f, 4.0f, 1.0f);
+	//glTranslatef(dist, dist, 0);
 
-	file1.GetSTLObject(stlObj1);
 	stlObj1.Draw();
 
 	drawAxes();
 
-	angle+=0.5f;
+	//angle+=0.5f;
+	dist+=1;
 
 	glutSwapBuffers();
 }
@@ -83,17 +91,20 @@ void drawAxes()
 	Point3D p1(-100, 0, 0);
 	Point3D p2(100, 0, 0);
 	LineR l1(&p1, &p2, m1);
-	l1.Draw();
+	l1.Draw();	
 	Point3D p3(0, -100, 0);
 	Point3D p4(	0, 100, 0	);
 	LineR l2(&p3, &p4, m2);
 	l2.Draw();
 	Point3D p5(0, 0, -100);
 	Point3D p6(0, 0, 100);
-	LineR l3(&p5, &p6, m3);
+	LineR l3(&p5, &p6, m2);
 	l3.Draw();
 }
 
+void glutMouseFunc(int button, int state, int x, int y)
+{
+}
 void processNormalKeys(unsigned char key, int x, int y)
 {
 	switch(key)
@@ -124,7 +135,14 @@ int main(int argc, char **argv)
 	glutIdleFunc(renderScene);
 	glutKeyboardFunc(processNormalKeys);
 	glutSpecialFunc(processSpecialKeys);
+	glutMouseFunc(glutMouseFunc);
 
+	LoadSTL(stlObj1);
+
+	double d1[4][4]={{1,0,0,0},{0,1,0,0},{0,0,1,0},{0,0,0,1}};
+	double d2[4][4]={{1,0,0,0},{0,1,0,0},{0,0,1,0},{0,0,0,1}};
+	Mat4x4 m1(&d1[0][0]);Mat4x4 m2(&d2[0][0]);
+	Mat4x4 m3 = m1*m2;
 
 	// enter GLUT event processing loop
 	glutMainLoop();

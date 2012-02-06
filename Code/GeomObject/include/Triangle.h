@@ -3,9 +3,9 @@
 #include <Object.h>
 #include <vector>
 #include <BasicDefs.h>
-#include <FixedSizeMatrix.h>
+#include <FixedSizeArray.h>
 #include <Point3D.h>
-#define Triangle FixedSizeMatrix<Point3D, 3>
+#define Triangle FixedSizeArray<Point3D, 3>
 /**/
 class TriangleR : public Object
 {
@@ -18,6 +18,7 @@ public:
 	Triangle GetTriangle() const;
 	virtual void Draw();
 	TriangleR(const TriangleR &iTr);
+	virtual void Translate(Vector3 &iDir, double idist);
 private:
 	Triangle					*_tr;
 };

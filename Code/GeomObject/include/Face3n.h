@@ -11,6 +11,7 @@ class Face3n : public Object
 public:
 	Face3n(TriangleR iTr, Mat3x1 &iColorMatrix);
 	virtual void Draw();
+	void Translate(Vector3 &iDir, double idist);
 private:
 	TriangleR _tr;
 };

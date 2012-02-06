@@ -16,6 +16,7 @@ public:
 	STLObject(const STLObject& iStlObj);
 	STLObject& operator=(const STLObject& iStlObj);
 	IteratorFace1n *GetFaceIterator() const;
+	virtual void Translate(Vector3 &iDir, double idist);
 private:
 	ListFace1n	_list;
 };

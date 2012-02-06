@@ -2,7 +2,7 @@
 
 
 STLObject::STLObject(Mat3x1 iMat):
-Object(iMat)
+Object(&iMat)
 {
 }
 STLObject::~STLObject()
@@ -31,7 +31,7 @@ void STLObject::DestroyFaces()
 }
 
 STLObject::STLObject(const STLObject& iStlObj):
-Object(iStlObj.GetColor())
+Object((iStlObj.GetColor()))
 {
 }
 IteratorFace1n *STLObject::GetFaceIterator() const
@@ -48,4 +48,7 @@ STLObject& STLObject::operator=(const STLObject& iStlObj)
 		pite = pite->Next();
 	}
 	return *this;
+}
+void STLObject::Translate(Vector3 &iDir, double idist)
+{
 }

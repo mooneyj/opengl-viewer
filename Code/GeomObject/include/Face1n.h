@@ -19,6 +19,7 @@ public:
 	Vector3 GetNorm() const;
 	void SetNorm(Vector3 &iNorm);
 	void SetColor(Mat3x1 &iM);
+	virtual void Translate(Vector3 &iDir, double idist);
 private:
 	TriangleR					*_tr;
 	Vector3						*_norm;
